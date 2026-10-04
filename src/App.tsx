@@ -7,6 +7,7 @@ import Chamada from './components/Chamada'
 import Entregas from './components/Entregas'
 import FichaAluno from './components/FichaAluno'
 import NaoEncontrado from './components/NaoEncontrado'
+import Resumo from './components/Resumo'
 
 function App() {
   // a turma nao mora mais no codigo: ela CHEGA pela rede
@@ -54,6 +55,7 @@ function App() {
         <nav className="abas" aria-label="Telas do painel">
           <NavLink to="/" end className={({ isActive }) => (isActive ? 'aba ativa' : 'aba')}>Chamada</NavLink>
           <NavLink to="/entregas" className={({ isActive }) => (isActive ? 'aba ativa' : 'aba')}>Entregas</NavLink>
+          <NavLink to="/resumo" className={({ isActive }) => (isActive ? 'aba ativa' : 'aba')}>Resumo</NavLink>
         </nav>
 
         <main>
@@ -66,6 +68,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Chamada alunos={alunos} onPresenca={marcarPresenca} />} />
             <Route path="/entregas" element={<Entregas alunos={alunos} onEntrega={registrarEntrega} />} />
+            <Route path="/resumo" element={<Resumo />} />
             {/* a URL carrega um DADO: o :id diz de quem e' a ficha */}
             <Route path="/aluno/:id" element={<FichaAluno alunos={alunos} carregando={carregando} />} />
             {/* qualquer outro endereco: a pagina de erro. Fica por ultimo por leitura (e' o "senao") */}
