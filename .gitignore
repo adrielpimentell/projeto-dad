@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# segredos — nunca sobem (a Semana 09 usa chaves de API)
+# configuração local — nunca sobe (VITE_* vai para o bundle público: troca a URL, não esconde nada)
 .env
 .env.*
 !.env.example

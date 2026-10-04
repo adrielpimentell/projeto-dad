@@ -5,7 +5,7 @@ import type { Aluno } from '../types/aluno'
 // numa frase que serve para uma PESSOA ler na tela.
 export async function buscarTurma(): Promise<Aluno[]> {
   try {
-    const resposta = await fetch('/alunos.json', {
+    const resposta = await fetch(import.meta.env.VITE_API_URL, {
       headers: { Accept: 'application/json' },   // pedimos JSON: no servidor de dev, arquivo ausente vira 404
     })
     // fetch NAO falha em 404: ele devolve uma resposta com ok:false. Sem esta conferencia,
